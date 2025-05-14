@@ -1,0 +1,221 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  background-color: hsl(27, 66%, 92%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+/* Main container */
+.container {
+  max-width: 540px;
+  width: 100%;
+}
+
+/* Balance container */
+.balance-container {
+  background-color: hsl(10, 79%, 65%);
+  color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.balance-title {
+  font-size: 0.95rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.balance-amount {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Spending container */
+.spending-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.8rem;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.spending-title {
+  color: hsl(25, 47%, 15%);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* Chart container */
+.chart-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 180px; /* Adjusted height to match design */
+  margin-bottom: 1.5rem;
+  padding-top: 1rem;
+}
+
+.chart-bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0 0.2rem;
+}
+
+.chart-bar {
+  width: 100%;
+  max-width: 50px;
+  background-color: hsl(10, 79%, 65%);
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+  min-height: 5px;
+}
+
+.chart-bar:hover {
+  background-color: hsl(10, 79%, 75%); /* Lighter shade on hover */
+}
+
+.chart-bar.current-day {
+  background-color: hsl(186, 34%, 65%);
+}
+
+.chart-bar.current-day:hover {
+  background-color: hsl(186, 34%, 75%); /* Lighter shade of cyan on hover */
+}
+
+.chart-bar-tooltip {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: hsl(25, 47%, 15%);
+  color: white;
+  padding: 0.5rem 0.6rem;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: none;
+  white-space: nowrap;
+  z-index: 10;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chart-bar:hover .chart-bar-tooltip {
+  display: block;
+}
+
+.chart-bar-label {
+  margin-top: 0.6rem;
+  color: hsl(28, 10%, 53%);
+  font-size: 0.85rem;
+}
+
+/* Divider */
+.divider {
+  border: none;
+  height: 2px;
+  background-color: hsl(27, 66%, 92%);
+  margin: 1.5rem 0 1.2rem 0;
+}
+
+/* Monthly summary */
+.monthly-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.total-title {
+  color: hsl(28, 10%, 53%);
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.total-amount {
+  color: hsl(25, 47%, 15%);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.percentage {
+  color: hsl(25, 47%, 15%);
+  font-weight: 700;
+  text-align: right;
+  margin-bottom: 0.2rem;
+}
+
+.percentage-period {
+  color: hsl(28, 10%, 53%);
+  font-size: 0.95rem;
+  text-align: right;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  .balance-container {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .balance-amount {
+    font-size: 1.5rem;
+  }
+
+  .spending-container {
+    padding: 1.5rem;
+  }
+
+  .spending-title {
+    font-size: 1.2rem;
+  }
+
+  .chart-container {
+    height: 160px;
+  }
+
+  .chart-bar {
+    border-radius: 3px; /* Slightly smaller radius for mobile */
+  }
+
+  .chart-bar-tooltip {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .chart-bar-label {
+    font-size: 0.75rem;
+  }
+
+  .total-amount {
+    font-size: 1.8rem;
+  }
+}
